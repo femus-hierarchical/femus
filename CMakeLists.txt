@@ -142,6 +142,9 @@ OPTION(BUILD_POISSON_AMR "Build the Poisson_AMR problem" ON)
 # --
 OPTION(BUILD_NUM_PDE_CLASS "Build the Numerical PDE Class applications" ON)
 
+
+OPTION(BUILD_HIERARCHICAL "Build the Hierarchical FEM applications" ON)
+
 #############################################################################################
 ### Build documentation (Doxygen)
 #############################################################################################
@@ -226,6 +229,7 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/enums)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/fe)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/physics)
 INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR}/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/hierarchical)
 
 # Include Fparser files
 IF(FPARSER_FOUND)
