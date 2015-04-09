@@ -102,6 +102,7 @@ hierarchical/element.cpp
 hierarchical/hex.cpp
 hierarchical/hexh.cpp
 hierarchical/hFun.cpp
+hierarchical/hVisualize.cpp
 hierarchical/line.cpp
 hierarchical/lineh.cpp
 hierarchical/linehFun.cpp

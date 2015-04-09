@@ -1,7 +1,7 @@
 #include "main.hpp"
 #include "elem_type.hpp"
 #include "multigrid.hpp"
-//#include "hVisualize.hpp"
+#include "hVisualize.hpp"
 #include <sstream>
 
 using namespace hierarchical_femus;
@@ -72,11 +72,9 @@ int main(int argc, char **argv){
   }
 
   
- // hVisualize vtkFile("output/hierarchical.7.vtk");
- // vtkFile.writeVtk();
-  
-  
-  
+  hVisualize vtkFile("output/hierarchical.7.vtk");
+  vtkFile.writeVtk();
+    
   return(0);
 }
 
