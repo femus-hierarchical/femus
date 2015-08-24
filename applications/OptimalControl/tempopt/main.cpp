@@ -30,8 +30,8 @@
 #include "libmesh/libmesh.h"
 #endif
 
-void  GenMatRhsT(MultiLevelProblem &ml_prob, unsigned Level, const unsigned &gridn, const bool &assemble_matrix);
-void  GenMatRhsNS(MultiLevelProblem &ml_prob, unsigned Level, const unsigned &gridn, const bool &assemble_matrix);
+void  GenMatRhsT(MultiLevelProblem &ml_prob);
+void  GenMatRhsNS(MultiLevelProblem &ml_prob);
 
 // =======================================
 // TEMPERATURE + NS optimal control problem
@@ -110,7 +110,6 @@ void  GenMatRhsNS(MultiLevelProblem &ml_prob, unsigned Level, const unsigned &gr
   Temperature temperature("Qty_Temperature",qty_map,1,QQ);          qty_map.AddQuantity(&temperature);
   TempLift       templift("Qty_TempLift",qty_map,1,QQ);             qty_map.AddQuantity(&templift);  
   TempAdj         tempadj("Qty_TempAdj",qty_map,1,QQ);              qty_map.AddQuantity(&tempadj);  
-  TempDes         tempdes("Qty_TempDes",qty_map,1,QQ);              qty_map.AddQuantity(&tempdes);  //this is not going to be an Unknown!
   // ===== end QuantityMap =========================================
   
   // ====== Start new main =================================
@@ -223,7 +222,7 @@ void  GenMatRhsNS(MultiLevelProblem &ml_prob, unsigned Level, const unsigned &gr
    
   // ******* set MG-Solver *******
   sys->SetMgType(F_CYCLE);
-  sys->SetAbsoluteConvergenceTolerance(1.e-10);
+  sys->SetLinearConvergenceTolerance(1.e-10);
   sys->SetNonLinearConvergenceTolerance(1.e-10);//1.e-5
   sys->SetNumberPreSmoothingStep(1);
   sys->SetNumberPostSmoothingStep(1);
