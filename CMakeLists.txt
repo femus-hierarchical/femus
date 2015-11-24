@@ -157,6 +157,9 @@ OPTION(BUILD_PCFIELDSPLIT "Build the PCFIELDSPLIT apps" ON)
 
 OPTION(BUILD_AMR "Build the AMR apps" ON)
 
+
+OPTION(BUILD_HIERARCHICAL "Build the Hierarchical FEM applications" ON)
+
 #############################################################################################
 ### Build documentation (Doxygen)
 #############################################################################################
@@ -241,6 +244,7 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/enums)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/fe)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/physics)
 INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR}/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/src/hierarchical)
 
 # Include Fparser files
 IF(FPARSER_FOUND)
