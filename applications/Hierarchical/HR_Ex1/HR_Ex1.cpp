@@ -6,8 +6,6 @@
 
 using namespace hierarchical_femus;
 
-
-
 bool Boundary1D(const double& x, const double& y, const double& z,const char name[], double& value, const int FaceName);
 bool BoundaryND(const double& x, const double& y, const double& z,const char name[], double& value, const int FaceName);
 

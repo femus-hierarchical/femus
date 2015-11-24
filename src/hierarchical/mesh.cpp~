@@ -724,7 +724,7 @@ void mesh::AddAdditionalNodes() //tested!
 }
 
 /* Set the number of total nodes, vertices, edges, and faces in the mesh */ 
-void mesh::SetMeshNodeInformation() 
+void mesh::SetMeshNodeInformation() //tested!
 {
   unsigned nv0=el->MeshVertexNum();
   

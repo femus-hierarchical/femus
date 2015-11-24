@@ -334,6 +334,7 @@ int lsysPDE::AssembleMatrix(vector < vector <const elem_type*> >  type_elem, vec
       vertex[i][2]=vt[2][vIndex[i]];
     }
     s=sign_(kel);t=type_(kel);
+    
     /* Build element stiffness matrix */
     if(p==gridn || !el->GetRefinedElementIndex(kel) ){
     for(unsigned ig=0; ig < type_elem[kelt][maxOrder]->NumOfGaussPts(); ig++){

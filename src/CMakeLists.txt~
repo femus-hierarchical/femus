@@ -121,25 +121,25 @@ hierarchical/trih.cpp
 hierarchical/trihFun.cpp
 hierarchical/wedge.cpp
 hierarchical/wedgeh.cpp
-hierarchical/single_element/element.cpp
-hierarchical/single_element/elem_type.cpp
-hierarchical/single_element/hex.cpp
-hierarchical/single_element/hexh.cpp
-hierarchical/single_element/hFun.cpp
-hierarchical/single_element/line.cpp
-hierarchical/single_element/lineh.cpp
-hierarchical/single_element/linehFun.cpp
-hierarchical/single_element/quad.cpp
-hierarchical/single_element/quadh.cpp
-hierarchical/single_element/tet.cpp
-hierarchical/single_element/teth.cpp
-hierarchical/single_element/tetraFun.cpp
-hierarchical/single_element/tri.cpp
-hierarchical/single_element/triFun.cpp
-hierarchical/single_element/trih.cpp
-hierarchical/single_element/trihFun.cpp
-hierarchical/single_element/wedge.cpp
-hierarchical/single_element/wedgeh.cpp
+hierarchical/single element/element.cpp
+hierarchical/single element/elem_type.cpp
+hierarchical/single element/hex.cpp
+hierarchical/single element/hexh.cpp
+hierarchical/single element/hFun.cpp
+hierarchical/single element/line.cpp
+hierarchical/single element/lineh.cpp
+hierarchical/single element/linehFun.cpp
+hierarchical/single element/quad.cpp
+hierarchical/single element/quadh.cpp
+hierarchical/single element/tet.cpp
+hierarchical/single element/teth.cpp
+hierarchical/single element/tetraFun.cpp
+hierarchical/single element/tri.cpp
+hierarchical/single element/triFun.cpp
+hierarchical/single element/trih.cpp
+hierarchical/single element/trihFun.cpp
+hierarchical/single element/wedge.cpp
+hierarchical/single element/wedgeh.cpp
 )
 
 IF (NOT LIBRARY_OUTPUT_PATH)
