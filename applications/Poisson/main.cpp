@@ -254,7 +254,7 @@ int main(int argc, char** argv) {
   system2.SetDirichletBCsHandling(PENALTY);
 
   // Solve Temperature system
-  ml_prob.get_system("Poisson").solve();
+  system2.MGsolve();
   //END Temperature Multilevel Problem
 
   /// Print all solutions
@@ -351,7 +351,8 @@ void AssemblePoissonMatrixandRhs(MultiLevelProblem& ml_prob) {
   // *** element loop ***
   for (int iel = mymsh->_elementOffset[iproc]; iel < mymsh->_elementOffset[iproc + 1]; iel++) {
 
-    short unsigned ielt = myel->GetElementType(iel);
+    //short unsigned ielt = myel->GetElementType(iel);
+    short unsigned ielt = mymsh->GetElementType(iel);
     unsigned nve = myel->GetElementDofNumber(iel, order_ind);
     unsigned nve2 = myel->GetElementDofNumber(iel, 2);
     // resize
@@ -502,13 +503,11 @@ void AssemblePoissonMatrixandRhs(MultiLevelProblem& ml_prob) {
       // loop on faces
       for (unsigned jface = 0; jface < nfaces; jface++) {
         // look for boundary faces
-        if (myel->GetFaceElementIndex(iel, jface) < 0) {
+        if (myel->GetBoundaryIndex(iel, jface) > 0) {
+          unsigned int faceIndex =  myel->GetBoundaryIndex(iel, jface);
 
-          unsigned int face = -(mymsh->el->GetFaceElementIndex(iel, jface) + 1) - 1;
-
-          if (ml_sol->GetBoundaryCondition("Sol", face) == NEUMANN && !ml_sol->Ishomogeneous("Sol", face)) {
-
-            bdcfunc = (ParsedFunction*)(ml_sol->GetBdcFunction("Sol", face));
+          if (ml_sol->GetBoundaryCondition("Sol", faceIndex - 1u) == NEUMANN && !ml_sol->Ishomogeneous("Sol", faceIndex - 1u)) {
+            bdcfunc = (ParsedFunction*)(ml_sol->GetBdcFunction("Sol", faceIndex - 1u));
             unsigned nve = mymsh->el->GetElementFaceDofNumber(iel, jface, order_ind);
             const unsigned felt = mymsh->el->GetElementFaceType(iel, jface);
 
@@ -566,9 +565,9 @@ void AssemblePoissonMatrixandRhs(MultiLevelProblem& ml_prob) {
       for (unsigned jface = 0; jface < myel->GetElementFaceNumber(iel); jface++) {
         // look for boundary faces
         if (myel->GetFaceElementIndex(iel, jface) < 0) {
-          unsigned int face = -(mymsh->el->GetFaceElementIndex(iel, jface) + 1);
+          unsigned int faceIndex =  myel->GetBoundaryIndex(iel, jface);
 
-          if (!ml_sol->GetBdcFunction()(xx, "Sol", tau, face, 0.) && tau != 0.) {
+          if (!ml_sol->GetBdcFunction()(xx, "Sol", tau, faceIndex, 0.) && tau != 0.) {
             unsigned nve = mymsh->el->GetElementFaceDofNumber(iel, jface, order_ind);
             const unsigned felt = mymsh->el->GetElementFaceType(iel, jface);
 
