@@ -97,31 +97,31 @@ utils/FemusInit.cpp
 utils/Files.cpp
 utils/InputParser.cpp
 utils/JsonInputParser.cpp
-hierarchical/elem.cpp
-hierarchical/elem_type.cpp
-hierarchical/element.cpp
-hierarchical/hex.cpp
-hierarchical/hexh.cpp
-hierarchical/hFun.cpp
-hierarchical/hVisualize.cpp
-hierarchical/line.cpp
-hierarchical/lineh.cpp
-hierarchical/linehFun.cpp
-hierarchical/linFun.cpp
-hierarchical/lsysPDE.cpp
-hierarchical/mesh.cpp
-hierarchical/multigrid.cpp
-hierarchical/quad.cpp
-hierarchical/quadh.cpp
-hierarchical/tet.cpp
-hierarchical/teth.cpp
-hierarchical/tetraFun.cpp
-hierarchical/tri.cpp
-hierarchical/triFun.cpp
-hierarchical/trih.cpp
-hierarchical/trihFun.cpp
-hierarchical/wedge.cpp
-hierarchical/wedgeh.cpp
+# hierarchical/elem.cpp
+# hierarchical/elem_type.cpp
+# hierarchical/element.cpp
+# hierarchical/hex.cpp
+# hierarchical/hexh.cpp
+# hierarchical/hFun.cpp
+# hierarchical/hVisualize.cpp
+# hierarchical/line.cpp
+# hierarchical/lineh.cpp
+# hierarchical/linehFun.cpp
+# hierarchical/linFun.cpp
+# hierarchical/lsysPDE.cpp
+# hierarchical/mesh.cpp
+# hierarchical/multigrid.cpp
+# hierarchical/quad.cpp
+# hierarchical/quadh.cpp
+# hierarchical/tet.cpp
+# hierarchical/teth.cpp
+# hierarchical/tetraFun.cpp
+# hierarchical/tri.cpp
+# hierarchical/triFun.cpp
+# hierarchical/trih.cpp
+# hierarchical/trihFun.cpp
+# hierarchical/wedge.cpp
+# hierarchical/wedgeh.cpp
 hierarchical/single_element/element.cpp
 hierarchical/single_element/elem_type.cpp
 hierarchical/single_element/hex.cpp
