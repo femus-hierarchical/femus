@@ -129,6 +129,7 @@ hierarchical/single_element/hexh.cpp
 hierarchical/single_element/hFun.cpp
 hierarchical/single_element/line.cpp
 hierarchical/single_element/lineh.cpp
+hierarchical/single_element/linFun.cpp
 hierarchical/single_element/linehFun.cpp
 hierarchical/single_element/quad.cpp
 hierarchical/single_element/quadh.cpp
